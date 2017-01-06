@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<script>
+function checks()
+{
+       var x = document.forms["paymentmethod"]["zip"].value;
+	   var y = x.length;
+			if (y == 4 || y==9)
+			{
+				payamount();
+        }
+		else
+		{
+			alert("zipcode is incorrect");
+    	}
+}
+function payamount()
+{ 
+		var m = document.forms["paymentmethod"]["paymentamount"].value;
+		
+			if ( m <500)
+			{
+				alert ("card amount should be more then 500");
+
+			}
+		 	 
+			else
+			{
+			cardname();
+			}   
+}
+function cardname()
+	{
+
+		var a = document.forms["paymentmethod"]["name"].value;
+		var a1 = a.length;
+		var b = document.forms["paymentmethod"]["cardno"].value;
+		var b1 = b.length;
+		var c = document.forms["paymentmethod"]["security"].value;
+		var c1 = c.length;
+	
+			if ( a1 == 0)
+			{
+				alert("cardname should be filled");
+
+			}
+			else
+				{
+					if(b1 ==0)
+					{
+						alert ( "enter card no");
+					}
+					else
+					{
+							if (c1 ==0)
+								{
+								alert("enter security no");
+								}
+							else
+								{	
+								alert("done");
+								}
+					}
+				
+				}
+	
+	}
+
+</script>
+
+</head>
+<body>
+			<table border = 4 cellpadding = "10" bgcolor="#C0C0C0">
+				<tr>
+					<td  style="padding-left:150px;padding-right:145px;">
+						<label> payment</label>
+			
+					</td>
+				</tr>
+			</table>
+		<br>
+		<br>
+ <form action="second.html" method="get" name = "paymentmethod">    
+			<input type = "text" name= "paymentamount" value = "$500"style="height:20px; width:355px"required /><br> 
+
+					<br><label>enter name of card holder</label><br>
+
+			<input type="text" name="name"style="height:20px; width:355px" required/><br>
+            
+			<label>enter card no</label></br>
+			 
+			 <input type="text" name="cardno"style="height:20px; width:355px" onkeypress='return event.charCode >= 48 && event.charCode <= 57'required><br>
+            
+			
+			<table>
+				<tr>
+					<td>
+					<label>exp date
+					</td>
+					<td>
+						<label>security code</label>
+					</td> 
+				</tr> 
+				<tr>
+					<td>
+						<input type="date" name = "date" min = "2017-01-05"
+					</td>
+				
+					<td>
+						<input type="text" name = "security"required/>
+					</td>
+				</tr> <br>
+					<br>
+				<tr>
+					<td>
+						<label>zip code</label>
+					</td>
+				</tr><br>
+				<tr>
+					<td colspan = "2"><input type = "text" id ="zipcode_id" name = "zip"required></input>
+					</td>
+				</tr>
+
+			</table>
+					
+							<input type="button" onclick = "checks()" value = "pay $500.00" style="height:50px; width:355px;background-color:purple" />
+            
+              <br>
+            <br>
+            </form>
+        
+
+
+</body>
+</html>
