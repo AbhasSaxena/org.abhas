@@ -1,0 +1,11 @@
+CREATE DATABASE `user`;
+USE `user`;
+CREATE TABLE `user`.`user` (
+  `userId` VARCHAR(40) NOT NULL,
+  `name` VARCHAR(45) NULL,
+  `password` VARCHAR(45) NULL,
+  `role` VARCHAR(45) NULL,
+  PRIMARY KEY (`userId`));
+
+INSERT INTO `user`.`user` (`userId`, `name`, `password`, `role`) VALUES ('gopi', 'gopi', '123', 'ROLE_ADMIN');
+
